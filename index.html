@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Angelo's Art</title>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+    
+    
+        
+        <ul>
+            <li><img id="logo" src="c:\Users\efr23236885\OneDrive - Northampton College\logo photo\aa.jpg" length="50px" width="50px"></li>
+            <li><a class="active" href="#home">Home</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+
+
+        <div class="flex_container">
+            <div class="flex_child_logo">
+            </div>
+            <div class="flex_child">
+            </div>
+
+        </div>
+
+        <h2 style="text-align:center">Slideshow Gallery</h2>
+
+        <div class="container">
+          <div class="mySlides">
+            <div class="numbertext">1 / 6</div>
+            <img src="images/art 1.webp" style="width:30%">
+            <p>"Harmony's Serenade" depicts a mesmerising scene where a young girl gracefully intertwines with her violin, creating a captivating symphony of sound and emotion. With delicate strokes, the artist captures the intimacy between the musician and her instrument, highlighting the girls profound connection to the music she produces</p>
+          </div>
+        
+          <div class="mySlides">
+            <div class="numbertext">2 / 6</div>
+            <img src="images/art 2.jpg" style="width:30%">
+          </div>
+        
+          <div class="mySlides">
+            <div class="numbertext">3 / 6</div>
+            <img src="images/art4.jpgnew.jpg" style="width:30%">
+          </div>
+            
+          <div class="mySlides">
+            <div class="numbertext">4 / 6</div>
+            <img src="images/art5.jpg" style="width:30%">
+          </div>
+        
+          <div class="mySlides">
+            <div class="numbertext">5 / 6</div>
+            <img src="images/art6" style="width:30%">
+          </div>
+            
+          <div class="mySlides">
+            <div class="numbertext">6 / 6</div>
+            <img src="images/art7.webp" style="width:30%">
+          </div>
+            
+          <a class="prev" onclick="plusSlides(-1)">❮</a>
+          <a class="next" onclick="plusSlides(1)">❯</a>
+        
+          <div class="caption-container">
+            <p id="caption"></p>
+          </div>
+        
+          <div class="row">
+            <div class="column">
+              <img class="demo cursor" src="images/art 1.webp" style="width:100%" onclick="currentSlide(1)" alt="Mark Making">
+            </div>
+            <div class="column">
+              <img class="demo cursor" src="images/art 2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Portraits">
+            </div>
+            <div class="column">
+              <img class="demo cursor" src="images/art4.jpgnew.jpg" style="width:100%" onclick="currentSlide(3)" alt="Futuristic">
+            </div>
+            <div class="column">
+              <img class="demo cursor" src="images/art5.jpg" style="width:100%" onclick="currentSlide(4)" alt="Landscapes">
+            </div>
+            <div class="column">
+              <img class="demo cursor" src="images/art6" style="width:100%" onclick="currentSlide(5)" alt="Contemporary">
+            </div>    
+            <div class="column">
+              <img class="demo cursor" src="images/art7.webp" style="width:100%" onclick="currentSlide(6)" alt="Abstract">
+            </div>
+          </div>
+        </div>
+        <script>
+            let slideIndex = 1;
+            showSlides(slideIndex);
+            
+            function plusSlides(n) {
+              showSlides(slideIndex += n);
+            }
+            
+            function currentSlide(n) {
+              showSlides(slideIndex = n);
+            }
+            
+            function showSlides(n) {
+              let i;
+              let slides = document.getElementsByClassName("mySlides");
+              let dots = document.getElementsByClassName("demo");
+              let captionText = document.getElementById("caption");
+              if (n > slides.length) {slideIndex = 1}
+              if (n < 1) {slideIndex = slides.length}
+              for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+              }
+              for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";
+              dots[slideIndex-1].className += " active";
+              captionText.innerHTML = dots[slideIndex-1].alt;
+            }
+            </script>
+
+    </body>
+</html>
